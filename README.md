@@ -21,4 +21,6 @@ in the root directory of the repo.
 
 ## Part 2 - Visualization
 
-I used an instance of Airbnb's open source data visualization tool Superset in order to create a time series line chart of average miss distance of NEOs over time starting from 1/1/2017. In order to make the chart less noisy and make it easier to observe trends, I chose to resample on a weekly basis rather than display each day's data point.
+I used an instance of Airbnb's open source data visualization tool Superset in order to create a time series line chart of average miss distance of NEOs over time starting from 1/1/2017. In order to make the chart less noisy and make it easier to observe trends, I chose to resample on a weekly basis rather than display each day's data point. I also, of course, made sure to filter for objects for which `is_potentially_hazardous_asteroid = true`.
+
+![alt text](https://github.com/ananya77041/neo-challenge/neo_avg_miss_dist_time.png "Average Miss Distance of Potentially Hazardous NEOs over Time")
