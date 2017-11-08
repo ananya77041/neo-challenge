@@ -1,0 +1,6 @@
+{
+  "HOST": "neo-challenge.c2uymgohzjtv.us-east-1.rds.amazonaws.com",
+  "PORT": 5432,
+  "DB": "nasa",
+  "TABLE": "neo"
+}
