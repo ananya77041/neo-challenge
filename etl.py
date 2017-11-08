@@ -68,6 +68,9 @@ def parse_raw_data_to_df(json_data):
                   'name']
     return df
 
+'''
+Writes DataFrame to DB.
+'''
 def write_df_to_db(df, engine):
     df.to_sql(name=DB_CONFIG['TABLE'], con=engine, if_exists='append', schema='nasa', index=False)
 
@@ -98,7 +101,8 @@ def run(start_date, db_user, db_password, api_key):
                     logging.info('Data for {} to {} written to DB!'.format(date_range[0], date_range[1]))
                 except Exception as e:
                     logging.error(e)
-                    logging.error('Data for {} to {} could not be retrieved!'.format())
+                    logging.error('Data for {} to {} could not be retrieved!'.format(date_range[0], date_range[1]))
+                    continue
             return 0
     else:
         sys.exit('Please provide a start date as there are currently no records.')
