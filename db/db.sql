@@ -1,9 +1,9 @@
-CREATE DATABASE nasa;
+CREATE SCHEMA IF NOT EXISTS nasa;
 
 CREATE TABLE IF NOT EXISTS nasa.neo(
 	neo_reference_id BIGINT PRIMARY KEY NOT NULL,
 	close_approach_date DATE,
 	name VARCHAR,
 	is_potentially_hazardous BOOLEAN,
-	miss_distance_km DOUBLE
+	miss_distance_km DOUBLE PRECISION
 );
