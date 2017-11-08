@@ -4,7 +4,20 @@
 
 For this ETL, I utilized a straightforward Python script to do the API querying, data cleaning, and loading. For the database, I used an AWS RDS PostgreSQL instance that I spun up specifically for this exercise, and the schema is contained in db/db.sql.
 
+The script can be run as follows:
+```
+python etl.py --start-date YYYY-MM-DD --db-user DB_USER --db-password DB_PASSWORD --api-key API_KEY
+```
+
+The script will backfill from the provided start date if there are no records in the table, start from the date of the last record if there are records in the table, and exit with a warning if no start date is provided.
+
 I chose to use (neo_reference_id, close_approach_date) as a compound primary key upon realizing that some neo_reference_ids appear multiple times (i.e. they approached Earth multiple times).
+
+Testing is provided by the nosetests framework and can be done simply by running
+```
+nosetests
+```
+in the root directory of the repo.
 
 ## Part 2 - Visualization
 
