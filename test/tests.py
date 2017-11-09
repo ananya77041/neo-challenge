@@ -2,7 +2,7 @@ from etl import parse_raw_data_to_df, make_neo_request
 import json
 from nose.tools import assert_equal
 
-class TestEtl(object):
+class TestProcessingFunctions(object):
     def setup(self):
         self.api_key = "DEMO_KEY"
         self.start_date = '2017-01-01'
